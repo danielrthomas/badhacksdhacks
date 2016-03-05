@@ -1,13 +1,10 @@
-//asdfadf
+var display = document.getElementById("display");
+var entry = "";
+var savedValue = "";
+var secondValue = false;
 
-function output() {
-    for (var i=0; i<10; i++) {
-        var button = document.getElementById("button-" + i);
-        if(button != null) {
-            button.onclick = function(e) {
-            disp = disp + e.target.id.substring(7);
-            display.innerHTML = disp;
-            }
-        }
-    }
+function output(number) {
+	entry = entry + number;
+	display.innerHTML = entry;
+	entry = entry.parseFloat();
 };
