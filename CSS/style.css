@@ -1,14 +1,21 @@
 #calculator{
 	width: 100%;
-	color: darkgrey;
+	background-color: darkgrey;
 	height: 100%;
 }
 #display{
 	color: blue;
 	width: 100%;
-	height: 3em;
+	height: 4em;
 	background-color: orange;
 }
 .row{
 	width: 100%;
+}
+button{
+	color: blue;
+	font-size: 3em;
+	background-color: yellow;
+	width: 24%;
+	height: 15%;
 }
