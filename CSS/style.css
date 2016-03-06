@@ -32,11 +32,11 @@ body {
 }
 
 button {
-    font-size: 100%;
+    font-size: 105%;
     border: .25% solid black;
     background: #ddd;
-    background: -webkit-linear-gradient(left top, #2ecefc, #2aa7cb);
-    background: -moz-linear-gradient(left top, #2ecefc, #2aa7cb);
+    background: -webkit-linear-gradient(left top, #2ecefc, #24afcc);
+    background: -moz-linear-gradient(left top, #2ecefc, #24afcc);
     margin: .25%;
     border-radius: 5%;
 
