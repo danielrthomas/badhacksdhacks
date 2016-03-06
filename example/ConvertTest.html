@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript</title>
+
+		<script>
+			function toRoman(num) {
+				var roman = " ",
+					numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
+					romanNumeral = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+				for (var i = 0; i < numbers.length; i++) {
+					while (num >= numbers[i]) {
+						roman = roman + romanNumeral[i];
+						num = num - numbers[i];
+					}
+				}
+				document.write(roman);
+			}
+			
+			function toBinary(num) {
+				var binary = (num >>> 0).toString(2);
+				document.write(binary)
+			}
+
+
+
+			 function toAscii(num) {
+			 	var digits = num.toString().split('');
+			 	var output = "";
+			 	var ascii = [0,1,2,3,4,5,6,7,8,9]
+			 	var asciidict = [" 48 " ," 49 "," 50 "," 51 "," 52 "," 53 "," 54 "," 55 "," 56 "," 57" ]
+			 	for (i = 0; i < digits.length; i++){
+			 		output = output + asciidict[(digits[i])]
+			 	}
+			 	document.write(output)
+			 }
+
+
+			 function toMaya(num){
+			 	var maya = " ",
+					numbers = [20,15, 10, 5, 1],
+					mayaNumeral = [" man ", "foot & hands", "both hands", " hand "," finger "];
+				for (var i = 0; i < numbers.length; i++) {
+					while (num >= numbers[i]) {
+						maya = maya + mayaNumeral[i];
+						num = num - numbers[i];
+					}
+				}
+				document.write(maya);
+			}
+
+			function toEgypt(num){
+			 	var egypt = " ",
+					numbers = [1000000,100000, 10000, 1000, 100, 10, 1],
+					egyptNumeral = [" astonished man ", " tadpole ", " pointing finger ", " lotus flower "," coil of rope ", " heelbone ", " staff "];
+				for (var i = 0; i < numbers.length; i++) {
+					while (num >= numbers[i]) {
+						egypt = egypt + egyptNumeral[i];
+						num = num - numbers[i];
+					}
+				}
+				document.write(egypt);
+			}
+
+
+
+
+
+
+
+
+		</script>
+	</head>
+	<body>
+		<script>
+			toRoman (35);
+			document.write("<br>");
+			toBinary(125);
+			document.write("<br>");
+			toAscii (23658);
+			document.write("<br>");
+			toMaya(133);
+			document.write("<br>");
+			toEgypt(132)
+
+
+			
+		</script>
+		
+	</body>
+</html>
+
