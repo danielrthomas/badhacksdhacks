@@ -3,37 +3,45 @@ html {}
 body {
     font-family: 'sans-serif';
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 100%;
 
 }
 
+#calculator{
+	background-color: #d06a61;
+	border: 1% solid black;
+	border-radius: 2%
+}
+#display, #display2{
+	height:50%;
+}
 
-#display {
-    border-radius: 5px;
-    border: 1px solid black;
-    height: 4.5em;
-    padding: 15px;
-    padding-top:10px;
+#big-display {
+    border-radius: 2%;
+    border: .2% solid black;
+    height: 15%;
+    padding: 1%;
+    padding-top:1%;
     margin:auto;
     margin-bottom: 8px;
     text-align:right;
-    background-color: #d4edd0;
-    background: -webkit-linear-gradient(top left, #d4edd0, #c5f0bf);
-    background: -moz-linear-gradient(left top, #d4edd0, #b2f0a9);
-    font-size: 13pt;
+    background-color: skyblue;
+    background: -webkit-linear-gradient(top left, #8ee88c, #6ac975);
+    background: -moz-linear-gradient(left top, #8ee88c, #6ac975);
+    font-size: 110%;
 }
 
 button {
-    font-size:1em;
-    border: 1px solid black;
+    font-size: 100%;
+    border: .25% solid black;
     background: #ddd;
-    background: -webkit-linear-gradient(left top, #dddddd, #c5c0c0);
-    background: -moz-linear-gradient(left top, #dddddd, #c5c0c0);
-    margin:2px 0px;
-    border-radius: 5px;
+    background: -webkit-linear-gradient(left top, #2ecefc, #2aa7cb);
+    background: -moz-linear-gradient(left top, #2ecefc, #2aa7cb);
+    margin: .25%;
+    border-radius: 5%;
 
-    width: 24.35%;
-    height: 6em;
+    width: 24.2%;
+    height: 12.5%;
 }
 
 button:hover {
@@ -42,7 +50,7 @@ button:hover {
 
 button:active {
     background-color: #8d8d8d;
-    box-shadow: 3px 3px 3px 0px #656363 inset;
+    box-shadow: 1% 1% 1% 0% #656363 inset;
     border: none;
 }
 

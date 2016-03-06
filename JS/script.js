@@ -1,4 +1,5 @@
 var display = document.getElementById("display");
+var display2 = document.getElementById("display2");
 var entry = "";
 var savedValue = "";
 var isValue = false;
@@ -41,17 +42,19 @@ mayan.onclick = function(e){language = "m";}
 egypt.onclick = function(e){language = "e";}
 
 function displayer(varia){
+	var transform = varia;
 	if(language == "r")
-		varia = toRoman(parseFloat(varia));
+		transform = toRoman(parseFloat(varia));
 	if(language == "b")
-		varia = toBinary(parseFloat(varia));
+		transform = toBinary(parseFloat(varia));
 	if(language == "a")
-		varia = toAscii(parseFloat(varia));
+		transform = toAscii(parseFloat(varia));
 	if(language == "m")
-		varia = toMaya(parseFloat(varia));
+		transform = toMaya(parseFloat(varia));
 	if(language == "e")
-		varia = toEgypt(parseFloat(varia));
-	display.innerHTML = varia;
+		transform = toEgypt(parseFloat(varia));
+	display.innerHTML = transform;
+	display2.innerHTML = varia;
 }
 
 function output(number) {
