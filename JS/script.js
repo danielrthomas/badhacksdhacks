@@ -71,7 +71,7 @@ function output(number) {
 		eqPressed = false;
 	}
 	entry = entry + number;
-	displayer(entry);
+	displayer(parseFloat(entry));
 }
 
 one.onclick = function(e){output('1');}
