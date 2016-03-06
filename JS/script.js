@@ -5,7 +5,7 @@ var isValue = false;
 var operation = "";
 var eqPressed = false;
 var operated = false;
-var language = "";
+var language = "e";
 var strings = new Array(2);
 
 var one = document.getElementById("button-1");
@@ -44,13 +44,13 @@ function displayer(varia){
 	if(language == "r")
 		varia = toRoman(parseFloat(varia));
 	if(language == "b")
-		varia = toRoman(parseFloat(varia));
+		varia = toBinary(parseFloat(varia));
 	if(language == "a")
-		varia = toRoman(parseFloat(varia));
+		varia = toAscii(parseFloat(varia));
 	if(language == "m")
-		varia = toRoman(parseFloat(varia));
+		varia = toMaya(parseFloat(varia));
 	if(language == "e")
-		varia = toRoman(parseFloat(varia));
+		varia = toEgypt(parseFloat(varia));
 	display.innerHTML = varia;
 }
 
