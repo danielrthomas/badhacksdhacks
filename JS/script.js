@@ -42,7 +42,6 @@ function output(number) {
 	}
 	entry = entry + number;
 	displayer(entry);
-	entry = parseFloat(entry);
 }
 
 one.onclick = function(e){output('1');}
