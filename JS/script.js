@@ -31,10 +31,6 @@ function displayer(varia){
 }
 
 function output(number) {
-	// if(clearEntry){
-	// 	entry = "";
-	// 	clearEntry = false;
-	// }
 	if(operated){
 		isValue = true;
 		entry = "";
@@ -77,21 +73,6 @@ function operator(ope){
 	}
 	operation = ope;
 	operated = true;
-	// if(operation != ""){
-	// }
-	// else{
-	// 	if(eqPressed){
-	// 		entry = "";
-	// 		eqPressed = false;
-	// 	}
-	// 	if(isValue){
-	// 		operate();
-	// 		displayer(savedValue);
-	// 	}
-	// 	operation = ope;
-	// 	isValue = true;
-	// 	clearEntry = true;
-	// }
 }
 
 function operate(){
@@ -133,4 +114,5 @@ clear.onclick = function(e){
 	eqPressed = false;
 	operation = "";
 	displayer("0");
+	operated = false;
 }
