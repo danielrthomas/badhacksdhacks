@@ -4,6 +4,7 @@ var savedValue = "";
 var isValue = false;
 var operation = "";
 var eqPressed = false;
+var clearEntry = false;
 
 var one = document.getElementById("button-1");
 var two = document.getElementById("button-2");
@@ -28,6 +29,10 @@ function displayer(varia){
 }
 
 function output(number) {
+	if(clearEntry){
+		entry = "";
+		clearEntry = false;
+	}
 	if(eqPressed){
 		savedValue = "";
 		isValue = false;
@@ -62,28 +67,24 @@ function operator(ope){
 	savedValue = entry;
 	operation = ope;
 	isValue = true;
-	entry = "";
+	clearEntry = true;
 }
 
-// assuming operation != "", assuming entry and savedValue both have fields
 function operate(){
 	if(operation == "+"){
-		entry = (parseFloat(savedValue) + parseFloat(entry)).toString();
+		savedValue = (parseFloat(savedValue) + parseFloat(entry)).toString();
 	}
 	else if(operation == "-"){
-		entry = (parseFloat(savedValue) - parseFloat(entry)).toString();
+		savedValue = (parseFloat(savedValue) - parseFloat(entry)).toString();
 	}
 	else if(operation == "*"){
-		entry = (parseFloat(savedValue) * parseFloat(entry)).toString();
+		savedValue = (parseFloat(savedValue) * parseFloat(entry)).toString();
 	}
 	else if(operation == "/"){
-		entry = (parseFloat(savedValue) / parseFloat(entry)).toString();
+		savedValue = (parseFloat(savedValue) / parseFloat(entry)).toString();
 	}
-	savedValue = "";
-	isValue = false;
-	displayer(entry);
+	displayer(savedValue);
 }
-//ends with savedValue = "", isValue = false, operation = ""
 
 plus.onclick = function(e){operator('+');}
 minus.onclick = function(e){operator('-');}
