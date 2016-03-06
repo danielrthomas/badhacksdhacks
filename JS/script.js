@@ -86,6 +86,9 @@ nine.onclick = function(e){output('9');}
 zero.onclick = function(e){output('0');}
 
 function operator(ope){
+	if(entry == "" && !isValue && !eqPressed){
+		entry = "0";
+	}
 	if(eqPressed){
 		entry = savedValue;
 		isValue = false;
