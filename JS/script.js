@@ -22,7 +22,9 @@ var minus = document.getElementById("button--");
 var multiply = document.getElementById("button-*");
 var divide = document.getElementById("button-/");
 
-var equals = document.getElementById("button-=")
+var equals = document.getElementById("button-=");
+
+var clear = document.getElementById("button-clear");
 
 function displayer(varia){
 	display.innerHTML = varia;
@@ -62,6 +64,7 @@ function operator(ope){
 	}
 	if(isValue){
 		operate();
+		displayer(savedValue);
 	}
 	savedValue = entry;
 	operation = ope;
@@ -82,7 +85,6 @@ function operate(){
 	else if(operation == "/"){
 		savedValue = (parseFloat(savedValue) / parseFloat(entry)).toString();
 	}
-	displayer(savedValue);
 }
 
 plus.onclick = function(e){operator('+');}
@@ -99,4 +101,14 @@ equals.onclick = function(e){
 		operate();
 		eqPressed = true;
 	}
+	displayer(savedValue);
+}
+
+clear.onclick = function(e){
+	entry = "";
+	savedValue = "";
+	isValue = false;
+	eqPressed = false;
+	operation = "";
+	displayer("0");
 }
