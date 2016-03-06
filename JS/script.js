@@ -26,6 +26,8 @@ var equals = document.getElementById("button-=");
 
 var clear = document.getElementById("button-clear");
 
+var decimal = document.getElementById("button-.");
+
 function displayer(varia){
 	display.innerHTML = varia;
 }
@@ -102,9 +104,12 @@ equals.onclick = function(e){
 			savedValue = entry;
 		}
 		operate();
-		eqPressed = true;
+		displayer(savedValue);
 	}
-	displayer(savedValue);
+	else{
+		savedValue = entry;
+	}
+	eqPressed = true;
 }
 
 clear.onclick = function(e){
@@ -116,3 +121,5 @@ clear.onclick = function(e){
 	displayer("0");
 	operated = false;
 }
+
+decimal.onclick = function(e){output('.');}
