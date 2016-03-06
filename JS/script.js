@@ -26,6 +26,8 @@ var equals = document.getElementById("button-=");
 
 var clear = document.getElementById("button-clear");
 
+var decimal = document.getElementById("button-.");
+
 function displayer(varia){
 	display.innerHTML = varia;
 }
@@ -119,3 +121,5 @@ clear.onclick = function(e){
 	displayer("0");
 	operated = false;
 }
+
+decimal.onclick = function(e){output('.');}
