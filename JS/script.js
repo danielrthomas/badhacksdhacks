@@ -4,7 +4,7 @@ var savedValue = "";
 var isValue = false;
 var operation = "";
 var eqPressed = false;
-var clearEntry = false;
+var operated = false;
 
 var one = document.getElementById("button-1");
 var two = document.getElementById("button-2");
@@ -31,9 +31,14 @@ function displayer(varia){
 }
 
 function output(number) {
-	if(clearEntry){
+	// if(clearEntry){
+	// 	entry = "";
+	// 	clearEntry = false;
+	// }
+	if(operated){
+		isValue = true;
 		entry = "";
-		clearEntry = false;
+		operated = false;
 	}
 	if(eqPressed){
 		savedValue = "";
@@ -59,17 +64,34 @@ zero.onclick = function(e){output('0');}
 
 function operator(ope){
 	if(eqPressed){
-		savedValue = entry;
-		entry = "";
+		entry = savedValue;
+		isValue = false;
+		eqPressed = false;
 	}
-	if(isValue){
+	if(!isValue){
+		savedValue = entry;
+	}
+	else{
 		operate();
 		displayer(savedValue);
 	}
-	savedValue = entry;
 	operation = ope;
-	isValue = true;
-	clearEntry = true;
+	operated = true;
+	// if(operation != ""){
+	// }
+	// else{
+	// 	if(eqPressed){
+	// 		entry = "";
+	// 		eqPressed = false;
+	// 	}
+	// 	if(isValue){
+	// 		operate();
+	// 		displayer(savedValue);
+	// 	}
+	// 	operation = ope;
+	// 	isValue = true;
+	// 	clearEntry = true;
+	// }
 }
 
 function operate(){
