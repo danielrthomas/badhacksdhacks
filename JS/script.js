@@ -102,9 +102,12 @@ equals.onclick = function(e){
 			savedValue = entry;
 		}
 		operate();
-		eqPressed = true;
+		displayer(savedValue);
 	}
-	displayer(savedValue);
+	else{
+		savedValue = entry;
+	}
+	eqPressed = true;
 }
 
 clear.onclick = function(e){
