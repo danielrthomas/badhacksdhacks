@@ -3,14 +3,15 @@ html {}
 body {
     font-family: 'sans-serif';
     font-weight: 400;
-    font-size: 10pt;
+    font-size: 1rem;
+
 }
 
 
 #display {
     border-radius: 5px;
     border: 1px solid black;
-    height: 5em;
+    height: 4.5em;
     padding: 15px;
     padding-top:10px;
     margin:auto;
@@ -28,8 +29,8 @@ button {
     background: #ddd;
     background: -webkit-linear-gradient(left top, #dddddd, #c5c0c0);
     background: -moz-linear-gradient(left top, #dddddd, #c5c0c0);
-/*    margin:2px;*/
-    border-radius: 5%;
+    margin:2px 0px;
+    border-radius: 5px;
 
     width: 24.35%;
     height: 6em;
@@ -46,40 +47,7 @@ button:active {
 }
 
 #button-0  {
-    width: 74.5%;
+    width: 99.3%;
 }
 
-
-/*
-.hexagon {
-	width: 24.4%;
-	height: 65px;
-	background: red;
-	position: relative;
-    
-}
-.hexagon:before {
-	content: "";
-	position: absolute;
-	top: -25px;
-	left: 0;
-	width: 100%;
-	height: 0;
-	border-left: solid transparent;
-	border-right: solid transparent;
-	border-bottom: solid red;
-}
-.hexagon:after {
-	content: "";
-	position: absolute;
-	bottom: -25px;
-	left: 0;
-	width: 0;
-	height: 0;
-    
-	border-left: 60px solid transparent;
-	border-right: 60px solid transparent;
-	border-top: 25px solid red;
-}
-*/
 
