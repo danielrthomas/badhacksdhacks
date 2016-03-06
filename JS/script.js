@@ -5,6 +5,8 @@ var isValue = false;
 var operation = "";
 var eqPressed = false;
 var operated = false;
+var language = "";
+var strings = new Array(2);
 
 var one = document.getElementById("button-1");
 var two = document.getElementById("button-2");
@@ -26,9 +28,29 @@ var equals = document.getElementById("button-=");
 
 var clear = document.getElementById("button-clear");
 
-var decimal = document.getElementById("button-.");
+var roman = document.getElementById("M-");
+var binary = document.getElementById("M+");
+var ascii = document.getElementById("MR");
+var mayan = document.getElementById("MC");
+var egypt = document.getElementById("button-pm");
+
+roman.onclick = function(e){language = "r";}
+binary.onclick = function(e){language = "b";}
+ascii.onclick = function(e){language = "a";}
+mayan.onclick = function(e){language = "m";}
+egypt.onclick = function(e){language = "e";}
 
 function displayer(varia){
+	if(language == "r")
+		varia = toRoman(parseFloat(varia));
+	if(language == "b")
+		varia = toRoman(parseFloat(varia));
+	if(language == "a")
+		varia = toRoman(parseFloat(varia));
+	if(language == "m")
+		varia = toRoman(parseFloat(varia));
+	if(language == "e")
+		varia = toRoman(parseFloat(varia));
 	display.innerHTML = varia;
 }
 
@@ -118,8 +140,62 @@ clear.onclick = function(e){
 	isValue = false;
 	eqPressed = false;
 	operation = "";
-	displayer("0");
 	operated = false;
+	displayer("0");
 }
 
-decimal.onclick = function(e){output('.');}
+function toRoman(num) {
+	var roman = " ",
+		numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
+		romanNumeral = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+	for (var i = 0; i < numbers.length; i++) {
+		while (num >= numbers[i]) {
+			roman = roman + romanNumeral[i];
+			num = num - numbers[i];
+		}
+	}
+	return roman;
+}	
+
+function toBinary(num) {
+	var binary = (num >>> 0).toString(2);
+	return binary;
+}
+
+function toAscii(num) {
+ 	var digits = num.toString().split('');
+ 	var output = "";
+ 	var ascii = [0,1,2,3,4,5,6,7,8,9]
+ 	var asciidict = [" 48 " ," 49 "," 50 "," 51 "," 52 "," 53 "," 54 "," 55 "," 56 "," 57" ]
+ 	for (i = 0; i < digits.length; i++){
+ 		output = output + asciidict[(digits[i])];
+ 	}
+ 	return output;
+ }
+
+
+function toMaya(num){
+ 	var maya = " ",
+		numbers = [20,15, 10, 5, 1],
+		mayaNumeral = [" man ", "foot & hands", "both hands", " hand "," finger "];
+	for (var i = 0; i < numbers.length; i++) {
+		while (num >= numbers[i]) {
+			maya = maya + mayaNumeral[i];
+			num = num - numbers[i];
+		}
+	}
+	return maya;
+}
+
+function toEgypt(num){
+ 	var egypt = " ",
+		numbers = [1000000,100000, 10000, 1000, 100, 10, 1],
+		egyptNumeral = [" astonished man ", " tadpole ", " pointing finger ", " lotus flower "," coil of rope ", " heelbone ", " staff "];
+	for (var i = 0; i < numbers.length; i++) {
+		while (num >= numbers[i]) {
+			egypt = egypt + egyptNumeral[i];
+			num = num - numbers[i];
+		}
+	}
+	return egypt;
+}
