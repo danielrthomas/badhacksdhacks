@@ -136,6 +136,7 @@ equals.onclick = function(e){
 	}
 	else{
 		savedValue = entry;
+		displayer(entry);
 	}
 	eqPressed = true;
 }
@@ -183,7 +184,7 @@ function toAscii(num) {
 function toMaya(num){
  	var maya = " ",
 		numbers = [20,15, 10, 5, 1],
-		mayaNumeral = [" man ", "foot & hands", "both hands", " hand "," finger "];
+		mayaNumeral = [String.fromCodePoint(128108), String.fromCodePoint(128113), String.fromCodePoint(128080), String.fromCodePoint(9995), String.fromCodePoint(128070)];
 	for (var i = 0; i < numbers.length; i++) {
 		while (num >= numbers[i]) {
 			maya = maya + mayaNumeral[i];
@@ -196,7 +197,7 @@ function toMaya(num){
 function toEgypt(num){
  	var egypt = " ",
 		numbers = [1000000,100000, 10000, 1000, 100, 10, 1],
-		egyptNumeral = [" astonished man ", " tadpole ", " pointing finger ", " lotus flower "," coil of rope ", " heelbone ", " staff "];
+		egyptNumeral = [String.fromCodePoint(128562), String.fromCodePoint(128056), String.fromCodePoint(128073), String.fromCodePoint(127800), String.fromCodePoint(127872), String.fromCodePoint(128009), String.fromCodePoint(128296)];
 	for (var i = 0; i < numbers.length; i++) {
 		while (num >= numbers[i]) {
 			egypt = egypt + egyptNumeral[i];
